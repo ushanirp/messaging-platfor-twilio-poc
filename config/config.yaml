@@ -1,0 +1,43 @@
+# ======================================================
+# Twilio Configuration
+# ======================================================
+TWILIO:
+  ACCOUNT_SID: ""
+  AUTH_TOKEN: ""
+  WHATSAPP_FROM: "+94123458986"
+
+# ======================================================
+# Application Security
+# ======================================================
+SECRET_KEY: "ushapp"
+DATABASE_PATH: "db/sqlitedb/whatsapp_platform.db"
+
+# ======================================================
+# Webhook Security
+# ======================================================
+TWILIO_VALIDATE_WEBHOOKS: true
+
+# ======================================================
+# Rate Limiting & Quiet Hours
+# ======================================================
+DEFAULT_RATE_LIMIT: 1
+DEFAULT_QUIET_HOURS:
+  START: 22     # 10 PM
+  END: 8        # 8 AM
+
+# ======================================================
+# Verified Numbers (for Twilio Sandbox / Trial Accounts)
+# ======================================================
+VERIFIED_NUMBERS:
+  - "+94123458986"
+
+# ======================================================
+# Default Admin User
+# ======================================================
+DEFAULT_CREATED_BY: "system"
+
+# ======================================================
+# Database URI - local sqlite db has been used in example
+# host, port, dbname, username, password should be taken from the secret to build the uri
+# ======================================================
+DATABASE_URI: mysql+pymysql://root:password@localhost:3306/whatsapp_platform
