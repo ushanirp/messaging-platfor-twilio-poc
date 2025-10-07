@@ -1,0 +1,162 @@
+<!-- Create Campaign Modal -->
+<div class="modal" id="create-campaign-modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Create New Campaign</h3>
+            <button class="close-modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <form id="campaign-form">
+                <div class="form-group">
+                    <label for="campaign-name">Campaign Name</label>
+                    <input type="text" id="campaign-name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="campaign-template">Template</label>
+                    <select id="campaign-template" required>
+                        <option value="">Select a template</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="campaign-segment">Segment</label>
+                    <select id="campaign-segment" required>
+                        <option value="">Select a segment</option>
+                    </select>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="campaign-schedule-type">Schedule Type</label>
+                        <select id="campaign-schedule-type">
+                            <option value="immediate">Immediate</option>
+                            <option value="scheduled">Scheduled</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group" id="schedule-at-container" style="display: none;">
+                        <label for="campaign-schedule-at">Schedule At</label>
+                        <input type="datetime-local" id="campaign-schedule-at">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="campaign-topic">Topic</label>
+                    <input type="text" id="campaign-topic" value="general">
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-secondary close-modal">Cancel</button>
+            <button class="btn btn-primary" id="save-campaign-btn">Create Campaign</button>
+        </div>
+    </div>
+</div>
+
+<!-- Create Template Modal -->
+<div class="modal" id="create-template-modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Create New Template</h3>
+            <button class="close-modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <form id="template-form">
+                <div class="form-group">
+                    <label for="template-name">Template Name</label>
+                    <input type="text" id="template-name" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="template-channel">Channel</label>
+                        <select id="template-channel">
+                            <option value="whatsapp">WhatsApp</option>
+                            <option value="sms">SMS</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="template-locale">Locale</label>
+                        <input type="text" id="template-locale" value="en">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="template-body">Message Body</label>
+                    <textarea id="template-body" rows="5" required></textarea>
+                    <small>Use {{placeholder}} for dynamic content</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="template-placeholders">Placeholders (comma separated)</label>
+                    <input type="text" id="template-placeholders" placeholder="name, location, date">
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-secondary close-modal">Cancel</button>
+            <button class="btn btn-primary" id="save-template-btn">Create Template</button>
+        </div>
+    </div>
+</div>
+
+<!-- Create Segment Modal -->
+<div class="modal" id="create-segment-modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Create New Segment</h3>
+            <button class="close-modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <form id="segment-form">
+                <div class="form-group">
+                    <label for="segment-name">Segment Name</label>
+                    <input type="text" id="segment-name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="segment-definition">Segment Definition (JSON)</label>
+                    <textarea id="segment-definition" rows="6" placeholder='{"filters": [{"path": "attributes.country", "op": "eq", "value": "US"}]}'></textarea>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-secondary close-modal">Cancel</button>
+            <button class="btn btn-primary" id="save-segment-btn">Create Segment</button>
+        </div>
+    </div>
+</div>
+
+<!-- Create User Modal -->
+<div class="modal" id="create-user-modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Add New User</h3>
+            <button class="close-modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <form id="user-form">
+                <div class="form-group">
+                    <label for="user-phone">Phone Number</label>
+                    <input type="text" id="user-phone" required placeholder="+1234567890">
+                </div>
+                
+                <div class="form-group">
+                    <label for="user-attributes">Attributes (JSON)</label>
+                    <textarea id="user-attributes" rows="4" placeholder='{"country": "US", "language": "en"}'></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="user-consent">Consent (JSON)</label>
+                    <textarea id="user-consent" rows="4" placeholder='{"whatsapp": true, "email": false}'></textarea>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-secondary close-modal">Cancel</button>
+            <button class="btn btn-primary" id="save-user-btn">Add User</button>
+        </div>
+    </div>
+</div>
